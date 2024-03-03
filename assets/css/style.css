@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('../fonts/Montserrat-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Montserrat-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Italic.woff2') format('woff2'),
+        url('../fonts/Montserrat-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+        url('../fonts/Montserrat-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-orange: #f8a91a;
+    --color-orange-light: #ffbd45;
+    --color-blue: #000935;
+    --color-grey: #f6f9fe;
+
+    --base-transition: all .15s ease-in-out;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.8rem;
+    font-family: 'Montserrat';
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    background-color: var(--color-blue);
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #0b1842;
+    }
+}
+
+.button {
+    background-color: var(--color-orange);
+    align-items: center;
+    color: #fff;
+    display: inline-flex;
+    font-size: 1.4rem;
+    font-weight: 600;
+    gap: 1.6rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    line-height: 24px;
+    padding: 2rem 3.2rem;
+    text-transform: uppercase;
+    transition: .3s ease;
+    border-radius: 4rem;
+    cursor: pointer;
+    border: 0;
+    transition: var(--base-transition);
+    text-decoration: none;
+
+    &:hover {
+        background-color: var(--color-orange-light);
+    }
+}
+
+h1, h2, h3, h4, h5 {
+    color: #fff;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.logo {
+    position: fixed;
+    bottom: -4rem;
+    opacity: .05;
+    width: 33vw;
+    pointer-events: none;
+
+    img {
+        width: 100%;
+    }
+
+    &.logo--align-left {
+        left: 0;
+    }
+
+    &.logo--align-right {
+        right: 0;
+    }
+}
+
+ol {
+    margin-top: 4.8rem;
+    font-size: 2.2rem;
+    padding-left: 3rem;
+
+    li {
+        padding: 1.5rem 0;
+        cursor: pointer;
+        transition: var(--base-transition);
+    }
+}
+
+ul {
+    font-size: 2.4rem;
+
+    li {
+        padding: 1.5rem 0;
+    }
+}
+
+main {
+    position: relative;
+
+    ol {
+        
+        li {
+           opacity: .15;
+
+            &:hover,
+            &.is-active {
+                opacity: 1;
+            }
+
+            strong {
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+#nodes {
+    position: fixed;
+    width: calc(50vw - 8rem);
+    right: 0;
+    background: var(--color-grey);
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    color: var(--color-blue);
+    padding: 4rem;
+    overflow: scroll;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rem;
+}
+
+p {
+    font-size: 2.2rem;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+}
+
+.steps {
+    width: 40vw;
+    position: relative;
+    padding-top: 8.5rem;
+
+    .step {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+
+        p,
+        ul,
+        ol,
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 1.8rem;
+            line-height: 3.4rem;
+        }
+
+        details summary h3 {
+            font-weight: bold;
+        }
+    }
+
+    .step--active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    ul {
+        padding-left: 1rem;
+    }
+
+    ol {
+        margin-top: 0;
+    }
+}
+
+img.code-block {
+    margin: 2rem 0;
+    display: block;
+    border: 2px solid #fff;
+}
+
+details {
+    
+    summary {
+        display: block;
+    }
+}
+
+hr {
+    border: 0;
+    border-bottom: 2px solid hsla(0,0%,100%,.341)
+}
+
+pre {
+    display: inline;
+    background-color: var(--color-grey);
+    color: var(--color-blue);
+    font-size: 1.2rem;
+    padding: 4px 6px 2px;
+    border-radius: 3px;
+}
+
+.buttons {
+    display: flex;
+    gap: 3rem;
+}
